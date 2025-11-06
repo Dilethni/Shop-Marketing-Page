@@ -1,13 +1,15 @@
+import Image from 'next/image'; // Corrected import from 'next/images' to 'next/image'
+
 const specialties = [
-  { name: "Premium Rice", query: "sri-lankan-rice-basmati-varieties" },
-  { name: "Fresh Produce", query: "fresh-vegetables-tomatoes-cabbage-carrots-sri-lankan" },
-  { name: "Dairy & Eggs", query: "dairy-milk-cheese-eggs-yogurt" },
-  { name: "Pantry Essentials", query: "pantry-spices-flour-sugar-oil-Sri-Lankan" },
-  { name: "Stationaries", query: "notebooks-pens-pencils-books-stationary-items" },
-  { name: "Kitchen Appliances", query: "kitchen-appliances-cookware-utensils-pots-pans" },
-  { name: "Cosmetics", query: "beauty-cosmetics-skincare-personal-care-products" },
-  { name: "Household Items", query: "household-cleaning-supplies-detergent-soaps-essentials" },
-]
+  { name: "Premium Rice", query: "sri-lankan-rice-basmati-varieties", img: "/images/rice.png" },
+  { name: "Fresh Produce", query: "fresh-vegetables-tomatoes-cabbage-carrots-sri-lankan", img: "/images/produce.png" },
+  { name: "Dairy & Eggs", query: "dairy-milk-cheese-eggs-yogurt", img: "/images/dairy.png" },
+  { name: "Pantry Essentials", query: "pantry-spices-flour-sugar-oil-Sri-Lankan", img: "/images/pantry.png" },
+  { name: "Stationaries", query: "notebooks-pens-pencils-books-stationary-items", img: "/images/pen.png" },
+  { name: "Kitchen Appliances", query: "kitchen-appliances-cookware-utensils-pots-pans", img: "/images/ceramic.jpg" },
+  { name: "Cosmetics", query: "beauty-cosmetics-skincare-personal-care-products", img: "/images/cosm.png" },
+  { name: "House Decors", query: "household-decorating-itmes", img: "/images/decor.jpg" },
+];
 
 export default function Specialties() {
   return (
@@ -25,10 +27,12 @@ export default function Specialties() {
             key={i}
             className="bg-yellow-50 rounded-xl p-6 border-3 border-[#00572B] hover:border-[#FFBB00] hover:bg-yellow-100 transition cursor-pointer group"
           >
-            <div className="aspect-square bg-gray-200 rounded-lg mb-4 flex items-center justify-center group-hover:bg-gray-300 transition overflow-hidden">
-              <img
-                src={`/.jpg?key=wbzza&height=200&width=200&query=${product.query}`}
+            <div className="aspect-square bg-gray-50 rounded-lg mb-4 flex items-center justify-center group-hover:bg-gray-300 transition overflow-hidden">
+              <Image
+                src={product.img} // Corrected the image source
                 alt={product.name}
+                width={200} // Added width for next/image
+                height={200} // Added height for next/image
                 className="w-full h-full object-cover rounded-lg"
               />
             </div>
@@ -38,5 +42,5 @@ export default function Specialties() {
         ))}
       </div>
     </section>
-  )
+  );
 }

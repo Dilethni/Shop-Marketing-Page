@@ -7,9 +7,14 @@ const _geist = Geist({ subsets: ["latin"] });
 const _geistMono = Geist_Mono({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: 'v0 App',
-  description: 'Created with v0',
-  generator: 'v0.app',
+  title: 'Abeysinghe Super Center',
+  description: 'Created with',
+  generator: 'app',
+  icons:{
+    icon: [       
+        { url: '/favicon.ico/logo.png', sizes: '180x180', type: 'image/png' },
+    ]
+  }
 }
 
 export default function RootLayout({

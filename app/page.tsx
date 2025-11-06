@@ -2,6 +2,7 @@
 
 import Header from "@/components/Header"
 import Hero from "@/components/Hero"
+import About from "@/components/about"
 import WhyChooseUs from "@/components/WhyChooseUs"
 import Promotions from "@/components/Promotions"
 import Specialties from "@/components/Specialties"
@@ -14,6 +15,7 @@ export default function Page() {
     <div className="min-h-screen bg-white">
       <Header />
       <Hero />
+      <About />
       <WhyChooseUs />
       <Promotions />
       <Specialties />

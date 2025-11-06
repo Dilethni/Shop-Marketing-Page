@@ -4,19 +4,19 @@ const promotions = [
   {
     title: "Rice Collection Sale",
     description: "Get 20% off on all premium rice varieties",
-    image: "/?height=150&width=300&query=rice-sale-discount",
+    image: "/images/rice.png",
     date: "Valid until: 15th November",
   },
   {
-    title: "Fresh Produce Offers",
-    description: "Buy 2 get 1 free on selected vegetables",
-    image: "/?height=150&width=300&query=fresh-produce-vegetables",
+    title: "Dairy Discounts",
+    description: "Buy 2 get 1 free on selected Dairy products",
+    image: "/images/dairy.png",
     date: "Valid until: 30th November",
   },
   {
     title: "Loyalty Rewards",
     description: "Earn points on every purchase",
-    image: "/?height=150&width=300&query=loyalty-rewards-points",
+    image: "images/card.png",
     date: "Ongoing program",
   },
 ]
@@ -32,7 +32,7 @@ export default function Promotions() {
         <div className="grid md:grid-cols-3 gap-6">
           {promotions.map((promo, i) => (
             <div key={i} className="bg-white rounded-xl p-6 border-4 border-[#FFBB00] hover:shadow-xl transition">
-              <div className="w-full h-32 bg-gray-200 rounded-lg mb-4 overflow-hidden">
+              <div className="w-full h-32 bg-gray-20 rounded-lg mb-4 overflow-hidden">
                 <img src={promo.image || "/placeholder.svg"} alt={promo.title} className="w-full h-full object-cover" />
               </div>
               <h4 className="font-bold text-lg text-[#00572B] mb-2">{promo.title}</h4>

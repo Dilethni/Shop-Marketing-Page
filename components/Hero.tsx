@@ -1,6 +1,16 @@
-import { Button } from "@/components/ui/button"
+// components/Hero.tsx
+"use client";
+
+import { Button } from "@/components/ui/button";
 
 export default function Hero() {
+  const scrollTo = (id: string) => {
+    const el = document.getElementById(id);
+    if (el) {
+      el.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <section className="max-w-7xl mx-auto px-4 pt-8 md:pt-12 pb-12 md:pb-16 flex flex-col md:flex-row items-center gap-12">
       <div className="flex-1 space-y-6">
@@ -15,10 +25,18 @@ export default function Hero() {
           doorstep. From premium rice varieties to fresh produce and household essentials, we have everything you need.
         </p>
         <div className="flex gap-4 pt-4">
-          <Button size="lg" className="bg-[#00572B] hover:bg-[#004620] text-white font-semibold">
+          <Button
+            size="lg"
+            onClick={() => scrollTo("products")}
+            className="bg-[#00572B] hover:bg-[#004620] text-white font-semibold"
+          >
             Explore Products
           </Button>
-          <Button size="lg" className="border-2 border-[#FFBB00] text-[#00572B] hover:bg-yellow-50 font-semibold">
+          <Button
+            size="lg"
+            onClick={() => scrollTo("contact")}
+            className="border-2 border-[#FFBB00] text-[#00572B] hover:bg-yellow-50 font-semibold"
+          >
             Learn More
           </Button>
         </div>
@@ -39,5 +57,5 @@ export default function Hero() {
         </div>
       </div>
     </section>
-  )
+  );
 }
